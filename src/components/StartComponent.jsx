@@ -1,4 +1,5 @@
 import illustration from "/illustration.png";
+import { Link } from "react-router-dom";
 
 export default function StartComponent(props) {
   return (
@@ -9,12 +10,14 @@ export default function StartComponent(props) {
       <div className="w-full flex justify-center my-4 md:w-6/12 mx-auto">
         <img src={illustration} className="object-cover"></img>
       </div>
-      <button
-        onClick={props.clicked}
-        className="w-full text-xl text-gray-50 font-semibold bg-gradient-to-r from-myPurple to-yellow-200 py-4 rounded-3xl md:w-3/4 lg:w-2/4"
-      >
-        Start Using
-      </button>
+      <Link to="/search">
+        <button
+          onClick={props.clicked}
+          className="w-full text-xl text-gray-50 font-semibold bg-gradient-to-r from-myPurple to-yellow-200 py-4 rounded-3xl md:w-3/4 lg:w-2/4"
+        >
+          Start Using
+        </button>
+      </Link>
     </div>
   );
 }
