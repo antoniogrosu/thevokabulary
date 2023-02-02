@@ -5,12 +5,15 @@ import SearchComponent from "./components/SearchComponent";
 import { useState } from "react";
 
 function App() {
-  const [component, setComponent] = useState(true);
+  const [component, setComponent] = useState(false);
+  function toggleSearch() {
+    setComponent((comp) => !comp);
+  }
   return (
     <>
       <Header />
       <div className="bg-gray-900 poppins py-24 px-8 md:p-24 lg:p-32">
-        {component && <StartComponent />}
+        {!component && <StartComponent clicked={toggleSearch} />}
         {component && <SearchComponent />}
       </div>
       <FooterComp />
