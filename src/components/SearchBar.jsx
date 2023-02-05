@@ -21,20 +21,36 @@ export default function SearchBar() {
 
   function submitForm(event) {
     event.preventDefault();
-    fetch(
-      `https://wordsapiv1.p.rapidapi.com/words/${word}/definitions`,
-      options
-    )
+    fetch(`https://wordsapiv1.p.rapidapi.com/words/${word}`, options)
       .then((response) => response.json())
-      .then((response) => setData(response.definitions))
+      .then((response) => setData(response.results))
       .catch((err) => console.error(err));
   }
-  const arr = data.map((obj) => obj.definition);
-  const defs = arr.map((def) => {
+  const arr = data.map((obj) => {
+    const result = {
+      def: obj.definition,
+      part: obj.partOfSpeech,
+      example: obj.examples,
+    };
+    return result;
+  });
+  const results = arr.map((obj) => {
     return (
-      <li className="capitalize text-lg text-gray-50 mb-10 font-semibold">
-        -{def}
-      </li>
+      <div className="capitalize text-xl mb-10 bg-gray-50 p-5 rounded-tr-3xl rounded-b-3xl">
+        <h1 className="poppins text-gray-900 font-semibold">
+          {" "}
+          <span className="italic text-myPurple mr-2">({obj.part})</span>
+          {obj.def}.{" "}
+        </h1>
+        {obj.example && (
+          <>
+            <div className="text-gray-900 mt-6 font-medium">example</div>
+            <div className="bg-myPurple p-4 mt-2 font-semibold rounded-lg text-gray-900">
+              "{obj.example}"
+            </div>
+          </>
+        )}
+      </div>
     );
   });
   return (
@@ -52,7 +68,7 @@ export default function SearchBar() {
         </button>
       </form>
       <div className="mt-20">
-        <ol type="1">{defs}</ol>
+        <ol type="1">{results}</ol>
       </div>
     </>
   );
