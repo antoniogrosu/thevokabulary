@@ -69,15 +69,13 @@ export default function SearchBar() {
           value={word}
           onChange={handleChange}
           placeholder="search for a word"
-          className="bg-gray-50 h-14 rounded-l-2xl rounded-r-none w-full placeholder:text-gray-300 placeholder:text-sm placeholder:indent-4 indent-4 text-sm text-gray-600 focus-within:outline-none"
+          className="font bg-gray-50 h-14 rounded-l-2xl rounded-r-none w-full placeholder:text-gray-300 placeholder:text-sm placeholder:indent-4 indent-4 text-sm text-gray-600 focus-within:outline-none"
         ></input>
         <button className="bg-gradient-to-r from-myPurple to-yellow-200 h-14 rounded-r-2xl px-8">
           <MdSearch style={{ fontSize: "2rem" }} className="text-gray-50" />
         </button>
       </form>
-      <div className="mt-20">
-        <ol type="1">{results}</ol>
-      </div>
+      <div className="mt-20">{results}</div>
     </>
   );
 }

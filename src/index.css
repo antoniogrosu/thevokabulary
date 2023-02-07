@@ -11,3 +11,6 @@ body::-webkit-scrollbar {
 body {
   background-color: #b388ff;
 }
+.font {
+  font-size: 16px;
+}
