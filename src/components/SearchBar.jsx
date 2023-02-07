@@ -36,17 +36,25 @@ export default function SearchBar() {
   });
   const results = arr.map((obj) => {
     return (
-      <div className="capitalize text-xl mb-10 bg-gray-50 p-5 rounded-tr-3xl rounded-b-3xl">
-        <h1 className="poppins text-gray-900 font-semibold">
-          {" "}
-          <span className="italic text-myPurple mr-2">({obj.part})</span>
-          {obj.def}.{" "}
-        </h1>
+      <div className="capitalize mb-10 bg-myPurple p-5 rounded-tr-3xl rounded-b-3xl">
+        {" "}
+        <div className="text-gray-50 font-semibold">
+          <span className="underline text-md">Part of speech </span>
+          <span className="font-bold text-gray-900 ml-2 ">({obj.part})</span>
+        </div>
+        <div className="text-gray-900 font-semibold mt-8">
+          <span className="text-gray-50 underline text-md block mb-3">
+            Definition
+          </span>
+          <span className="text-lg font-semibold">{obj.def}.</span>
+        </div>
         {obj.example && (
           <>
-            <div className="text-gray-900 mt-6 font-medium">example</div>
-            <div className="bg-myPurple p-4 mt-2 font-semibold rounded-lg text-gray-900">
-              "{obj.example}"
+            <span className="text-gray-50 underline text-md font-semibold block mt-8 mb-3">
+              example
+            </span>
+            <div className="bg-gray-900 p-4 mt-3 font-medium rounded-lg text-gray-50">
+              {obj.example} .
             </div>
           </>
         )}
