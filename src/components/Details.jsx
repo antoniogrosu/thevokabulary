@@ -2,46 +2,38 @@ export default function Details() {
   return (
     <>
       <div className="my-16 text-lg text-gray-50 font-semibold">
-        <h1 className="mb-4">
-          Search for words and find out their hierarchical information as well.{" "}
-        </h1>
+        <h1 className="mb-4">Find definitions and examples. </h1>
         <div className="p-5 bg-myPurple rounded-2xl">
           <p className="poppins text-md text-gray-900 font-semibold mb-1">
-            a hatchback{" "}
-            <span className="font-medium text-gray-50">is a type of car </span>
-          </p>
-          <p className="poppins text-md text-gray-900 font-semibold mb-1">
-            a finger{" "}
+            Compelling ={" "}
             <span className="font-medium text-gray-50">
-              is a part of a hand{" "}
+              Tending To Persuade By Forcefulness Of Argument.
             </span>
           </p>
           <p className="poppins text-md text-gray-900 font-semibold mb-1">
-            oxygen{" "}
+            Example :{" "}
             <span className="font-medium text-gray-50">
-              is a substance of water{" "}
+              New And Compelling Evidence .
             </span>
           </p>
         </div>
       </div>
       <div className="my-16 text-lg text-gray-50 font-semibold">
         <h1 className="mb-4">
-          You can find synonyms, antonyms, or even rhymes.{" "}
+          Search for words and find out their part of speech.{" "}
         </h1>
         <div className="p-5 bg-myPurple rounded-2xl">
           <p className="poppins text-md text-gray-900 font-semibold mb-1">
-            fast ={" "}
-            <span className="font-medium text-gray-50">
-              quick, profligate, flying
-            </span>
+            an airport{" "}
+            <span className="font-medium text-gray-50">is a noun </span>
           </p>
           <p className="poppins text-md text-gray-900 font-semibold mb-1">
-            beauty <span className="line-through">=</span>{" "}
-            <span className="font-medium text-gray-50">ugliness</span>
+            to cut down{" "}
+            <span className="font-medium text-gray-50">is a verb </span>
           </p>
           <p className="poppins text-md text-gray-900 font-semibold mb-1">
-            game rhymes :{" "}
-            <span className="font-medium text-gray-50">aim, blame, claim</span>
+            compelling{" "}
+            <span className="font-medium text-gray-50">is an adjective </span>
           </p>
         </div>
       </div>

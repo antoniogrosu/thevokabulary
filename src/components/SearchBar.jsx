@@ -1,6 +1,7 @@
 import { MdSearch } from "react-icons/md";
 import { useEffect, useState } from "react";
 import { Link, Routes, Route } from "react-router-dom";
+import Details from "./Details";
 
 export default function SearchBar() {
   const [word, setWord] = useState("");
@@ -36,7 +37,7 @@ export default function SearchBar() {
   });
   const results = arr.map((obj) => {
     return (
-      <div className="capitalize mb-10 bg-myPurple p-5 rounded-tr-3xl rounded-b-3xl">
+      <div className="capitalize mb-10 bg-myPurple p-5 rounded-2xl">
         {" "}
         <div className="text-gray-50 font-semibold">
           <span className="underline text-md">Part of speech </span>
@@ -75,7 +76,8 @@ export default function SearchBar() {
           <MdSearch style={{ fontSize: "2rem" }} className="text-gray-50" />
         </button>
       </form>
-      <div className="mt-20">{results}</div>
+      {results && <div className="mt-20">{results}</div>}
+      {!results.length && <Details />}
     </>
   );
 }
